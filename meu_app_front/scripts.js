@@ -4,7 +4,7 @@
   -----------------------------------------------------------------------------------
 */
 const getList = async () =>{
-    let url = 'http://192.168.31.21:5000/clientes_listar';
+    let url = 'http://127.0.0.1:5000/clientes_listar';
     fetch(url, {
         method: 'get',
     })
@@ -36,7 +36,7 @@ const postItem = async (inputNome, inputEmail, inputTelefone) => {
     formData.append('email_do_cliente', inputEmail);
     formData.append('telefone_do_cliente', inputTelefone);
 
-    let url = 'http://192.168.31.21:5000/cliente_cadastrar';
+    let url = 'http://127.0.0.1:5000/cliente_cadastrar';
     fetch(url, {
       method: 'post',
       body: formData
@@ -92,7 +92,7 @@ const removeElement = () => {
 */
 const deleteItem = (item) => {
     console.log(item)
-    let url = 'http://192.168.31.21:5000/cliente_deletar?id_do_cliente=' + item ;
+    let url = 'http://127.0.0.1:5000/cliente_deletar?id_do_cliente=' + item ;
     fetch(url, {
       method: 'delete'
     })
